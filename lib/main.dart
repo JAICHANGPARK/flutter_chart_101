@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:charts_flutter/flutter.dart';
 class Sales {
   final String day;
   final int sold;
@@ -16,15 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
@@ -48,6 +40,10 @@ class _MyHomePageState extends State<MyHomePage> {
       Sales("Thu", 145),
       Sales("Fri", 190),
       Sales("Sat", 30),
+    ];
+
+    var series =[
+
     ];
 
     return Container();
