@@ -32,7 +32,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     var data = [
       Sales("Sun", 50),
       Sales("Mon", 70),
@@ -48,13 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
           domainFn: (Sales sales, _) => sales.day,
           measureFn: (Sales sales, _) => sales.sold,
           id: 'Sales',
-          data: data)
+          data: data,
+      labelAccessorFn: (Sales sales, _) => '${sales.day} : ${sales.sold.toString()}'),
     ];
 
-    var chart = charts.BarChart(
-      series
-    );
-
+    var chart = charts.BarChart(series
+    , vertical: false,);
 
     return Scaffold(
       appBar: AppBar(
