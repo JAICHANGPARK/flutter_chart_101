@@ -48,11 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
           measureFn: (Sales sales, _) => sales.sold,
           id: 'Sales',
           data: data,
-      labelAccessorFn: (Sales sales, _) => '${sales.day} : ${sales.sold.toString()}'),
+          labelAccessorFn: (Sales sales, _) =>
+              '${sales.day} : ${sales.sold.toString()}'),
     ];
 
-    var chart = charts.BarChart(series
-    , vertical: false,);
+    var chart = charts.BarChart(
+      series,
+      vertical: false,
+      barRendererDecorator: charts.BarLabelDecorator<String>(),
+      domainAxis: charts.OrdinalAxisSpec(renderSpec: charts.NoneRenderSpec()),
+    );
 
     return Scaffold(
       appBar: AppBar(
