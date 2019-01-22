@@ -58,15 +58,24 @@ class _MyHomePageState extends State<MyHomePage> {
       barRendererDecorator: charts.BarLabelDecorator<String>(),
       domainAxis: charts.OrdinalAxisSpec(renderSpec: charts.NoneRenderSpec()),
     );
+    var pi_chart = charts.PieChart(
+      series,
+      defaultRenderer: charts.ArcRendererConfig(
+        arcRendererDecorators: [charts.ArcLabelDecorator()],
+        arcWidth: 100
+      ),
+      animate: true,
+      animationDuration: Duration(seconds: 1),
+    );
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bar chart"),
+        title: Text("Pie chart"),
         centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: chart,
+        child: pi_chart,
       ),
     );
   }
