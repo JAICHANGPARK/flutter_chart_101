@@ -32,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+
     var data = [
       Sales("Sun", 50),
       Sales("Mon", 70),
@@ -60,7 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Bar chart"),
         centerTitle: true,
       ),
-      body: chart,
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: chart,
+      ),
     );
   }
 }
