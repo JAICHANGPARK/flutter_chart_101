@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
+
 class Sales {
   final String day;
   final int sold;
@@ -16,7 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
@@ -42,10 +42,25 @@ class _MyHomePageState extends State<MyHomePage> {
       Sales("Sat", 30),
     ];
 
-    var series =[
-
+    var series = [
+      charts.Series(
+          domainFn: (Sales sales, _) => sales.day,
+          measureFn: (Sales sales, _) => sales.sold,
+          id: 'Sales',
+          data: data)
     ];
 
-    return Container();
+    var chart = charts.BarChart(
+      series
+    );
+
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Bar chart"),
+        centerTitle: true,
+      ),
+      body: chart,
+    );
   }
 }
