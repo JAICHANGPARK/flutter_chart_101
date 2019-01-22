@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Sales{
+class Sales {
   final String day;
   final int sold;
 
@@ -38,20 +38,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
-
   @override
   Widget build(BuildContext context) {
-
     var data = [
-      Sales("Sun", 50)
-    Sales("Sun", 50),
-    Sales("Sun", 50),
-    Sales("Sun", 50),
-    Sales("Sun", 50),
-    Sales("Sun", 50),
-    Sales("Sun", 50),
+      Sales("Sun", 50),
+      Sales("Mon", 70),
+      Sales("Tue", 100),
+      Sales("Wed", 50),
+      Sales("Thu", 145),
+      Sales("Fri", 190),
+      Sales("Sat", 30),
     ];
 
     return Container();
