@@ -2,6 +2,22 @@
 
 A new Flutter application.
 
+## Bar Chart
+
+<div style="text-align: center">
+  <table>
+    <tr>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_chart_101/blob/master/device-2019-01-22-211930.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_chart_101/blob/master/device-2019-01-22-212411.png" width="200">
+      </td>
+    </tr>
+  </table>
+</div>
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
