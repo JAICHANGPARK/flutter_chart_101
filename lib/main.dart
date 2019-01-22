@@ -42,6 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
       Sales("Sat", 30),
     ];
 
+    var data2 = [
+      Sales("Sun", 50),
+      Sales("Mon", 70),
+      Sales("Tue", 100),
+      Sales("Wed", 50),
+      Sales("Thu", 145),
+      Sales("Fri", 190),
+      Sales("Sat", 30),
+    ];
+
     var series = [
       charts.Series(
           domainFn: (Sales sales, _) => sales.day,
@@ -50,6 +60,14 @@ class _MyHomePageState extends State<MyHomePage> {
           data: data,
           labelAccessorFn: (Sales sales, _) =>
               '${sales.day} : ${sales.sold.toString()}'),
+
+      charts.Series(
+          domainFn: (Sales sales, _) => sales.day,
+          measureFn: (Sales sales, _) => sales.sold,
+          id: 'Sales',
+          data: data2,
+          labelAccessorFn: (Sales sales, _) =>
+          '${sales.day} : ${sales.sold.toString()}'),
     ];
 
     var chart = charts.BarChart(
@@ -58,6 +76,17 @@ class _MyHomePageState extends State<MyHomePage> {
       barRendererDecorator: charts.BarLabelDecorator<String>(),
       domainAxis: charts.OrdinalAxisSpec(renderSpec: charts.NoneRenderSpec()),
     );
+
+    var barChart = charts.BarChart(
+      series,
+      barGroupingType: charts.BarGroupingType.grouped,
+    );
+
+    var barChartStack = charts.BarChart(
+      series,
+      barGroupingType: charts.BarGroupingType.stacked,
+    );
+
     var pi_chart = charts.PieChart(
       series,
       defaultRenderer: charts.ArcRendererConfig(
@@ -70,12 +99,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pie chart"),
+        title: Text("Bar chart"),
         centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: pi_chart,
+        child: barChartStack,
       ),
     );
   }
