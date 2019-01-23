@@ -15,8 +15,7 @@ A new Flutter application.
       </td>
       <td style="text-align: center">
         <img src="https://github.com/JAICHANGPARK/flutter_chart_101/blob/master/device-2019-01-22-213316.png" width="200">
-      </td>
-     
+      </td> 
     </tr>
   </table>
 </div>
