@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter_chartapp/http_page.dart';
 
 class Sales {
   final String day;
@@ -8,7 +9,7 @@ class Sales {
   Sales(this.day, this.sold);
 }
 
-void main() => runApp(MyApp());
+void main() => runApp(HttpTestPage());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
